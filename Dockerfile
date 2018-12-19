@@ -1,6 +1,6 @@
 FROM openjdk:8u171-jre-alpine3.8
 
-ENV OKTA_VERSION=1.0.4
+ENV OKTA_VERSION=1.0.6
 ENV OKTA_RELEASE=https://github.com/oktadeveloper/okta-aws-cli-assume-role/releases/download/v${OKTA_VERSION}/okta-aws-cli-${OKTA_VERSION}.jar
 
 # install aws cli
