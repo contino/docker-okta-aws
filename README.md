@@ -5,18 +5,17 @@ Containerised Okta CLI with Python AWS sdks installed.
 Run as a command:
 
 ```
-docker run --rm -v ~/.aws:/root/.aws contino/okta
+docker run --rm -v ~/.aws:/root/.aws contino/okta-aws
 ```
 
 Using docker-compose:
 
 ```
-terraform:
-image: contino/okta
-env_file: .env
-working_dir: /opt/app
-volumes:
-  - ~/.aws:/root/.aws
+okta:
+  image: contino/okta-aws
+  env_file: .env
+  volumes:
+    - ~/.aws:/root/.aws
 ```
 
 And run `docker-compose run okta` to be prompted with username and password.
@@ -25,7 +24,7 @@ Can also set as a bash function and placed in your `~/.bashrc` or equivalent
 for quick access:
 
 ```
-function okta { docker run --rm -it -v ~/.aws:/root/.aws contino/okta; }
+function okta { docker run --rm -it -v ~/.aws:/root/.aws contino/okta-aws; }
 ```
 
 Then run `okta` on your terminal to be prompted.
