@@ -10,8 +10,7 @@ java -classpath /usr/bin/okta-aws-cli.jar com.okta.tools.awscli \
 
 # Assume role if specified
 if [[ -n "${AWS_ASSUME_ROLE_ARN}" ]]; then
-
-  # Assume into specified role
+  echo -e "\nAssuming role as: ${AWS_ASSUME_ROLE_ARN}"
   assumed_role_details=$(aws sts assume-role \
     --role-arn "${AWS_ASSUME_ROLE_ARN}" \
     --role-session-name "${AWS_ASSUME_SESSION_NAME:-OktaAssumeRole}" \
@@ -29,6 +28,5 @@ if [[ -n "${AWS_ASSUME_ROLE_ARN}" ]]; then
   aws configure set aws_session_token "${aws_session_token}"
 
   # Secondary AWS login
-  assumed_role=$(aws sts get-caller-identity --query "Arn" --output text)
-  echo -e "\nAssumed secondary AWS role as: ${assumed_role}"
+  aws sts get-caller-identity
 fi
