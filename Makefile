@@ -1,4 +1,4 @@
-OKTA_VERISON = 1.0.6
+OKTA_VERISON = 1.0.8
 IMAGE_NAME ?= contino/okta-aws:$(OKTA_VERISON)
 TAG = $(OKTA_VERISON)
 
