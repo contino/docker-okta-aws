@@ -10,8 +10,7 @@ java "-Duser.home=${HOME}" \
      --profile "${OKTA_AWS_PROFILE:-default}" sts get-caller-identity
 
 # Assume role if specified
-AWS_ASSUME_ROLE_ARN="${AWS_ASSUME_ROLE_ARN:-}"
-if [[ ! -z "${AWS_ASSUME_ROLE_ARN}" ]]; then
+if [ -n "${AWS_ASSUME_ROLE_ARN:-}" ]; then
   echo -e "\nAssuming role as: ${AWS_ASSUME_ROLE_ARN}"
   assumed_role_details=$(aws sts assume-role \
     --role-arn "${AWS_ASSUME_ROLE_ARN}" \
