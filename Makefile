@@ -6,8 +6,8 @@ build:
 	docker build -t $(IMAGE_NAME) .
 
 test:
-	docker run --rm -it $(IMAGE_NAME) aws --version
-	docker run --rm -it $(IMAGE_NAME) make --version
+	@docker run --rm -it $(IMAGE_NAME) aws --version
+	@docker run --rm -it $(IMAGE_NAME) make --version
 
 gitTag:
 	-git tag -d $(TAG)
