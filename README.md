@@ -70,7 +70,7 @@ OKTA_AWS_APP_URL=https://my-org.okta.com/home/amazon_aws/123456789
 ```
 
 ## Build
-Update the `OKTA_VERSION` in both `Makefile` and `Dockerfile`. The run:
+Update the `OKTA_VERSION` in both `Makefile` and `Dockerfile`. Then run:
 
     make build
 
