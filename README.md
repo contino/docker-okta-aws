@@ -8,14 +8,14 @@ variables within a .env file. A configuration file can be bind mounted instead.
 ### Docker
 Run as a command:
 
-```
+```bash
 docker run --rm -v ~/.aws:/root/.aws contino/okta-aws
 ```
 
 ### Docker-Compose
 Using docker-compose:
 
-```
+```yaml
 okta:
   image: contino/okta-aws
   env_file: .env
@@ -29,7 +29,7 @@ And run `docker-compose run okta` to be prompted with username and password.
 Can also set as a bash function and placed in your `~/.bashrc` or equivalent
 for quick access, with a configuration file:
 
-```
+```bash
 function okta() {
   docker run --rm -it -v ~/.okta/config.properties:/root/.okta/config.properties -v ~/.aws:/root/.aws contino/okta-aws;
 }
@@ -38,8 +38,8 @@ function okta() {
 Then run `okta` on your terminal to be prompted.
 
 ## Configuration
-Please see [okta](https://github.com/oktadeveloper/okta-aws-cli-assume-role)
-for further detail on Okta related configuration.
+Please see [Okta](https://github.com/oktadeveloper/okta-aws-cli-assume-role)
+for further details.
 
 ### Environment Variables
 Here are some quick environment variables to get you started:
@@ -70,11 +70,11 @@ OKTA_AWS_APP_URL=https://my-org.okta.com/home/amazon_aws/123456789
 ```
 
 ## Build
-Update the `OKTA_VERSION` in both `Makefile` and `DockerFile`. The run:
+Update the `OKTA_VERSION` in both `Makefile` and `Dockerfile`. Then run:
 
     make build
 
-Docker Hub will automatically triger a new build.
+Docker Hub will automatically trigger a new build.
 
 ## Related Projects
 - [hashicorp/terraform](https://hub.docker.com/r/hashicorp/terraform/)
