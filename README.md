@@ -74,7 +74,7 @@ Update the `OKTA_VERSION` in both `Makefile` and `Dockerfile`. Then run:
 
     make build
 
-Docker Hub will automatically trigger a new build.
+Docker Hub will automatically trigger a new build. 
 
 ## Related Projects
 - [hashicorp/terraform](https://hub.docker.com/r/hashicorp/terraform/)
