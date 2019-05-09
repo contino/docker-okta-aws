@@ -2,14 +2,13 @@
 Containerised Okta CLI with Python AWS sdks installed.
 
 ## Usage
-The below 2 examples assume that you will be utilising environment
-variables within a .env file. A configuration file can be bind mounted instead.
+The below 2 examples assume that you will be utilising a configuration file.
 
 ### Docker
 Run as a command:
 
 ```bash
-docker run --rm -v ~/.aws:/root/.aws contino/okta-aws
+docker run --rm -v ~/.okta/config.properties:/root/.okta/config.properties -v ~/.aws:/root/.aws contino/okta-aws
 ```
 
 ### Docker-Compose
@@ -18,8 +17,8 @@ Using docker-compose:
 ```yaml
 okta:
   image: contino/okta-aws
-  env_file: .env
   volumes:
+    - ~/.okta/config.properties:/root/.okta/config.properties
     - ~/.aws:/root/.aws
 ```
 
@@ -74,7 +73,7 @@ Update the `OKTA_VERSION` in both `Makefile` and `Dockerfile`. Then run:
 
     make build
 
-Docker Hub will automatically trigger a new build. 
+Docker Hub will automatically trigger a new build.
 
 ## Related Projects
 - [hashicorp/terraform](https://hub.docker.com/r/hashicorp/terraform/)
