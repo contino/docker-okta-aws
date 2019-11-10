@@ -1,6 +1,6 @@
 .SILENT:
-OKTA_VERISON = 1.0.10
-TAG = $(OKTA_VERISON)-1
+OKTA_VERSION = 1.0.10
+TAG = $(OKTA_VERSION)-1
 IMAGE_NAME ?= contino/okta-aws:$(TAG)
 
 .PHONY: build
